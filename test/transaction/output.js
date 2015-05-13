@@ -168,4 +168,14 @@ describe('Output', function() {
     should.equal(output.script, null);
   });
 
+  it('should throw an error if Script throws an error that is not InvalidBuffer', function() {
+    var output = new Output({
+      satoshis: 1000,
+      script: new Script()
+    });
+    (function() {
+      output._setScriptFromBuffer('bad');
+    }).should.throw(TypeError);
+  });
+
 });
