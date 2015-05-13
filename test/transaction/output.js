@@ -90,7 +90,7 @@ describe('Output', function() {
   });
 
   it('can set a script from a buffer', function() {
-    var newOutput = Output(output);
+    var newOutput = new Output(output.toObject());
     newOutput.setScript(Script().add(0).toBuffer());
     newOutput.inspect().should.equal('<Output (0 sats) <Script: OP_0>>');
   });
@@ -129,9 +129,9 @@ describe('Output', function() {
     var transaction = bitcore.Transaction();
     transaction.fromString('01000000019ac03d5ae6a875d970128ef9086cef276a1919684a6988023cc7254691d97e6d010000006b4830450221009d41dc793ba24e65f571473d40b299b6459087cea1509f0d381740b1ac863cb6022039c425906fcaf51b2b84d8092569fb3213de43abaff2180e2a799d4fcb4dd0aa012102d5ede09a8ae667d0f855ef90325e27f6ce35bbe60a1e6e87af7f5b3c652140fdffffffff080100000000000000010101000000000000000202010100000000000000014c0100000000000000034c02010100000000000000014d0100000000000000044dffff010100000000000000014e0100000000000000064effffffff0100000000');
     var obj = transaction.toObject();
-    obj.outputs[2].scriptBuffer.should.equal('4c');
-    obj.outputs[4].scriptBuffer.should.equal('4d');
-    obj.outputs[6].scriptBuffer.should.equal('4e');
+    obj.outputs[2].script.should.equal('4c');
+    obj.outputs[4].script.should.equal('4d');
+    obj.outputs[6].script.should.equal('4e');
   });
 
   it('#toObject roundtrip will handle an invalid (null) script', function() {
@@ -164,7 +164,7 @@ describe('Output', function() {
   it('sets script to null if it is an InvalidBuffer', function() {
     var output = new Output({
       satoshis: 1000,
-      scriptBuffer: new Buffer('4c', 'hex')
+      script: new Buffer('4c', 'hex')
     });
     should.equal(output.script, null);
   });
@@ -180,7 +180,7 @@ describe('Output', function() {
     (function() {
       var output = new OutputTest({
         satoshis: 1000,
-        scriptBuffer: new Buffer('', 'hex')
+        script: new Buffer('', 'hex')
       });
     }).should.throw('test error');
   });
