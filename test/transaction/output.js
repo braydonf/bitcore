@@ -4,7 +4,6 @@
 /* jshint latedef: false */
 var should = require('chai').should();
 var expect = require('chai').expect;
-var proxyquire = require('proxyquire');
 var _ = require('lodash');
 
 var bitcore = require('../..');
@@ -169,19 +168,4 @@ describe('Output', function() {
     should.equal(output.script, null);
   });
 
-  it('should throw an error if Script throws an error that is not InvalidBuffer', function() {
-    var TestScript = function() {};
-    TestScript.fromBuffer = function() {
-      throw new Error('test error');
-    };
-    var OutputTest = proxyquire('../../lib/transaction/output', {
-      '../script': TestScript
-    });
-    (function() {
-      var output = new OutputTest({
-        satoshis: 1000,
-        script: new Buffer('', 'hex')
-      });
-    }).should.throw('test error');
-  });
 });
