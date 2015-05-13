@@ -162,22 +162,18 @@ describe('Output', function() {
 
   it('sets script to null if it is an InvalidBuffer', function() {
     var output = new Output({
-      satoshis: 1000
+      satoshis: 1000,
+      script: new Buffer('4c', 'hex')
     });
-    output._scriptBuffer = new Buffer('4c', 'hex');
-
-    var result = output.script;
-    should.equal(result, null);
+    should.equal(output.script, null);
   });
 
   it('should throw an error if Script throws an error that is not InvalidBuffer', function() {
-    var output = new Output({
-      satoshis: 1000
-    });
-    output._scriptBuffer = 'bad';
-
     (function() {
-      var result = output.script;
+      var output = new Output({
+        satoshis: 1000,
+        script: 'bad'
+      });
     }).should.throw('Invalid hex string');
   });
 });
