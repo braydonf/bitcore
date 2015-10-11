@@ -12,7 +12,7 @@ A platform to build Bitcoin and blockchain-based applications for the next gener
 Spin up a full node and join the network:
 
 ```bash
-npm install -g bitcore
+npm install -g bitcore-cli
 bitcore create mynode
 cd mynode
 bitcore start

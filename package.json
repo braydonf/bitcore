@@ -10,9 +10,6 @@
     "coverage": "gulp coverage",
     "build": "gulp"
   },
-  "bin": {
-    "bitcore": "./bin/index.js"
-  },
   "contributors": [
     {
       "name": "Braydon Fuller",
@@ -86,17 +83,12 @@
     "request": "browser-request"
   },
   "dependencies": {
-    "async": "^1.4.2",
     "bn.js": "=2.0.4",
     "bs58": "=2.0.0",
-    "commander": "^2.8.1",
     "elliptic": "=3.0.3",
     "hash.js": "=1.0.2",
     "inherits": "=2.0.1",
-    "liftoff": "^2.2.0",
     "lodash": "=3.10.1",
-    "mkdirp": "^0.5.1",
-    "semver": "^5.0.3",
     "sha512": "=0.0.1"
   },
   "devDependencies": {
