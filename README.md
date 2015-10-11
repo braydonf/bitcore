@@ -9,6 +9,26 @@ A platform to build Bitcoin and blockchain-based applications for the next gener
 
 ## Getting Started
 
+Install with Node.js
+
+```bash
+npm install bitcore
+```
+
+Install for web browsers:
+
+```bash
+bower install bitcore
+```
+
+Create a transaction:
+```js
+var bitcore = require('bitcore');
+var transaction = new bitcore.Transaction();
+var transaction.from(unspent).to(address, amount);
+transaction.sign(privateKey);
+```
+
 Spin up a full node and join the network:
 
 ```bash
