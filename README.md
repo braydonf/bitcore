@@ -32,10 +32,10 @@ transaction.sign(privateKey);
 Spin up a full node and join the network:
 
 ```bash
-npm install -g bitcore-cli
-bitcore create mynode
+npm install -g bitcore-node
+bitcore-node create mynode
 cd mynode
-bitcore start
+bitcore-node start
 ```
 
 ## Applications
@@ -49,7 +49,7 @@ bitcore start
 - [Angular Wallet Client](https://github.com/bitpay/angular-bitcore-wallet-client) - An Angular based wallet client
 - [Copay](https://github.com/bitpay/copay) - An easy-to-use, multiplatform, multisignature, secure bitcoin wallet.
 
-## Features
+## Extended Features
 
 - [Payment Protocol](https://github.com/bitpay/bitcore-payment-protocol) - A protocol for merchant's and customer's wallet
 - [P2P](https://github.com/bitpay/bitcore-p2p) - Peer-to-Peer networking
