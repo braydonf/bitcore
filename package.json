@@ -1,6 +1,6 @@
 {
   "name": "bitcore",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "A platform to build bitcoin and blockchain-based applications.",
   "author": "BitPay <dev@bitpay.com>",
   "main": "index.js",
@@ -81,9 +81,9 @@
     "request": "browser-request"
   },
   "dependencies": {
-    "bitcore-lib": "^0.13.12",
-    "bitcore-node": "^2.0.0",
-    "insight-api": "^0.3.2",
+    "bitcore-lib": "^0.13.14",
+    "bitcore-node": "braydonf/bitcore-node#a61f43a5843841266faa463a57dfb1f151b3126c",
+    "insight-api": "braydonf/insight-api#c83842eb6007b8fa66d623ebb203d7c5b4a61067",
     "insight-ui": "^0.3.0"
   },
   "license": "MIT",
